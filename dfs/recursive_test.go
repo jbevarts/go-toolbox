@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_iterativeDFS(t *testing.T) {
+func Test_recursiveDFS(t *testing.T) {
 	testCases := []struct {
 		root       *ds.TreeNode
 		visitOrder []int
@@ -36,7 +36,7 @@ func Test_iterativeDFS(t *testing.T) {
 		},
 	}
 	for _, tt := range testCases {
-		order := IterativeDFS(tt.root)
+		order := RecursiveDFS(tt.root)
 		fmt.Println(order)
 
 		assert.Equal(t, tt.visitOrder, order, "Order incorrect")
