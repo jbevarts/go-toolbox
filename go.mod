@@ -1,4 +1,4 @@
-module golang/interview_prep
+module github.com/jbevarts/go-toolbox
 
 go 1.25.1
 

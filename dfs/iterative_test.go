@@ -4,16 +4,18 @@ import (
 	"fmt"
 	"testing"
 
+	ds "github.com/jbevarts/go-toolbox/datastructures"
+	examples "github.com/jbevarts/go-toolbox/examples"
 	"github.com/stretchr/testify/assert"
 )
 
 func Test_iterativeDFS(t *testing.T) {
 	testCases := []struct {
-		root       *TreeNode
+		root       *ds.TreeNode
 		visitOrder []int
 	}{
 		{
-			root:       tree1,
+			root:       examples.Tree1,
 			visitOrder: []int{1, 2, 4, 8, 9, 5, 10, 11, 3, 6, 12, 13, 7, 14, 15},
 		},
 		{

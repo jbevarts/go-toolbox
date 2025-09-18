@@ -1,14 +1,12 @@
 package dfs
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import (
+	ds "github.com/jbevarts/go-toolbox/datastructures"
+)
 
-func IterativeDFS(root *TreeNode) []int {
+func IterativeDFS(root *ds.TreeNode) []int {
 	visited := []int{}
-	stack := []*TreeNode{}
+	stack := []*ds.TreeNode{}
 
 	cur := root
 
