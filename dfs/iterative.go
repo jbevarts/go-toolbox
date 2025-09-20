@@ -23,3 +23,24 @@ func IterativeDFS(root *ds.TreeNode) []int {
 	}
 	return visited
 }
+
+func IterativeDFSInorder(root *ds.TreeNode) []int {
+	visited := []int{}
+	stack := []*ds.TreeNode{}
+	cur := root
+
+	for cur != nil || len(stack) > 0 {
+		for cur != nil {
+			stack = append(stack, cur)
+			cur = cur.Left
+		}
+
+		next := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+
+		visited = append(visited, next.Val)
+		cur = next.Right
+	}
+
+	return visited
+}
